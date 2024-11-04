@@ -1,6 +1,5 @@
-CURR_DIR = .
-default: $(CURR_DIR/*.wat)
-	wat2wasm $^
+default:
+	wat2wasm demo.wat
 serve:
 	deno run --allow-net --allow-read --watch index.ts
 fmt:

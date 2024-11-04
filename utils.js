@@ -22,7 +22,7 @@ function printImports(fileName) {
 }
 
 function useImports() {
-  const fileName = "imports.wasm";
+  const fileName = "demo.wasm";
   const importObject = {
     importModule: {
       importFunctionOne: (param) => {

@@ -8,4 +8,9 @@
         i32.const 1
         call $log
         i32.const 2
-        call $log2))
+        call $log2)
+
+    ;; Standalone function
+    (func $functionOne (result i32)
+        i32.const 2)
+    (export "functionOne" (func $functionOne)))
