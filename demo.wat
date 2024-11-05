@@ -13,4 +13,9 @@
     ;; Standalone function
     (func $functionOne (result i32)
         i32.const 2)
-    (export "functionOne" (func $functionOne)))
+    (export "functionOne" (func $functionOne))
+
+    (func (export "add") (param $a i32) (param $b i32) (result i32)
+        (i32.add
+          (local.get $a)
+          (local.get $b))))
