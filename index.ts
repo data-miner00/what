@@ -7,9 +7,18 @@ Deno.serve((req: Request) => {
     return serveFile(req, "./path/to/file.txt");
   }
 
+  const headers = [
+    "hello: world",
+
+    // For shared memory
+    "Cross-Origin-Opener-Policy: same-origin",
+    "Cross-Origin-Embedder-Policy: require-corp",
+  ];
+
   return serveDir(req, {
     fsRoot: ".",
     urlRoot: "",
+    headers,
   });
 
   return new Response("404: Not Found", {
