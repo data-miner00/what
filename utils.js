@@ -38,5 +38,26 @@ function useImports() {
     .then((result) => {
       const instance = result.instance;
       instance.exports.useImports();
+    })
+
+    // Error handling
+    .catch((error) => {
+      // When .wasm file is corrupted
+      if (error instanceof WebAssembly.CompileError) {
+        console.log(`Compile error ${error.message}`);
+        console.log(error.name);
+        console.log(error.fileName);
+        console.log(error.lineNumber);
+        console.log(error.columnNumber);
+        console.log(error.stack);
+
+        // When not passing the correct import object
+      } else if (error instanceof TypeError) {
+        console.log(`Type error ${error.message}`);
+
+        // When passing the unexpected functions
+      } else if (error instanceof WebAssembly.LinkError) {
+        console.log(`Link error ${error.message}`);
+      }
     });
 }
