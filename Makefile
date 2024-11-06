@@ -13,5 +13,11 @@ serve:
 fmt:
 	deno fmt *.js *.ts
 
+nasm:
+	node node-wasm.js
+
+dasm:
+	deno run deno-wasm.ts
+
 clean:
 	Remove-Item *.wasm
