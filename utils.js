@@ -39,7 +39,6 @@ function useImports() {
       const instance = result.instance;
       instance.exports.useImports();
     })
-
     // Error handling
     .catch((error) => {
       // When .wasm file is corrupted

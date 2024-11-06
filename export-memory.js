@@ -1,21 +1,21 @@
 const importObject = {
-    codeModule: { readString }
+  codeModule: { readString },
 };
 
 let memory;
 let instance;
 
 function instantiateWithMemory() {
-    WebAssembly.instantiateStreaming(fetch('export-memory.wasm'), importObject)
-        .then(result => {
-            instance = result.instance;
-            memory = instance.exports.memory;
-            instance.exports.writeHW();
-        });
+  WebAssembly.instantiateStreaming(fetch("export-memory.wasm"), importObject)
+    .then((result) => {
+      instance = result.instance;
+      memory = instance.exports.memory;
+      instance.exports.writeHW();
+    });
 }
 
 function readString(offset, length) {
-    const bytes = new Uint8Array(memory.buffer, offset, length);
-    const str = new TextDecoder('utf8').decode(bytes);
-    console.log(str);
+  const bytes = new Uint8Array(memory.buffer, offset, length);
+  const str = new TextDecoder("utf8").decode(bytes);
+  console.log(str);
 }

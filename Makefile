@@ -11,7 +11,7 @@ serve:
 	deno run --allow-net --allow-read --watch index.ts
 
 fmt:
-	deno fmt utils.js index.ts
+	deno fmt *.js *.ts
 
 clean:
 	Remove-Item *.wasm
