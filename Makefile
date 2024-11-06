@@ -14,4 +14,4 @@ fmt:
 	deno fmt utils.js index.ts
 
 clean:
-	rm -f $(WASM_FILES)
+	Remove-Item *.wasm
