@@ -10,3 +10,6 @@ Tinkering with WebAssembly.
 - [wasmer](https://wasmer.io/)
 - [Awesome Wasm](https://github.com/mbasso/awesome-wasm)
 - [WebAssembly - web.dev](https://web.dev/explore/webassembly)
+- [WebAssembly - Deno](https://docs.deno.com/runtime/reference/wasm/)
+- [wasmtime](https://wasmtime.dev/)
+- [WebAssembly System Interface](https://github.com/WebAssembly/WASI)
